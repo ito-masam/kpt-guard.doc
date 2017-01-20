@@ -14,17 +14,15 @@
 
     ' ----------- main
     User -- ( <レポートID>をdeleteする )
+    ( <レポートID>をdeleteする ) ..> ( <レポートID>に紐付く\nレポートを探す ) : << precedes >>
+    ( <レポートID>に紐付く\nレポートを探す ) ..> ( 該当レポートを\n論理削除する ) : << precedes >>
 
     note right of ( <レポートID>をdeleteする )
       @reply delete #0104503
     end note
 
-' 1. slackのbotとして動作する
-' 1. botは@replyでコマンドとレポートIDを受け付ける
-' 1. 受け付けるコマンドは`delete #<レポートID>`
-' 1. botは受け付けたレポートIDに紐つくレポートを論理削除する
-' 	- 代替コース：受け付けたレポートIDに紐つくレポートが存在しない場合は、`404 Not Found`を返して終わる。
-' 1. 履歴は保存しない
-' 1. 改善状態を変更しない
+    ' ----------- alternative
+    ( 404 Not Found を返す ) <<error>>
+    ( <レポートID>をdeleteする ) ..> ( 404 Not Found を返す ) : <レポートID>に紐付く\nレポートが存在しない
 
 @enduml
