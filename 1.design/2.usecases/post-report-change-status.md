@@ -1,14 +1,36 @@
-## レポートの改善状態を変更する
+@startuml
 
-1. slackのbotとして動作する
-1. botは@replyでコマンドとレポートIDと改善状態を受け付ける
-1. 受け付けるコマンドは`post #<レポートID> :<改善状態(keep, try)>`
-1. botは受け付けたレポートIDに紐つくレポートの改善状態を変更する
-	- 代替コース：受け付けたレポートIDに紐つくレポートが存在しない場合は、`404 Not Found`を返して終わる。
-1. 改善状態は、`problem --> try <--> keep`の順にしか遷移できない
-	- 代替コース：受け付けた改善状態が遷移順に違反する場合は、`400 Bad Request`を返して終わる。
-	- 代替コース：受け付けた改善状態が`keep, try`以外の場合は、`400 Bad Request`を返して終わる。
+    ' ----------- meta
+    title レポートの改善状態を変更する
 
-```
-@incident post #0104503 :try
-```
+    skinparam usecase {
+      FontColor<<error>> white
+      FontName<<error>> Verdana
+      BackgroundColor<<error>> gray
+      BorderColor<<error>> black
+    }
+
+    actor User
+
+    ' ----------- main
+    User -- ( <レポートID>と<改善状態>を\npostする )
+    ( <レポートID>と<改善状態>を\npostする ) ..> ( <レポートID>に紐付く\nレポートを探す ) : << precedes >>
+    ( <レポートID>に紐付く\nレポートを探す ) ..> ( 該当レポートの\nstatusを\n更新する ) : << precedes >>
+
+    note right of ( <レポートID>と<改善状態>を\npostする )
+      @reply post #0104503 :try
+      @reply post #0104503 :keep
+    end note
+
+    ' ----------- alternative
+    ( 404 Not Found を返す ) <<error>>
+    ( <レポートID>と<改善状態>を\npostする ) ..> ( 404 Not Found を返す ) : <レポートID>に紐付く\nレポートが存在しない
+
+    ( 400 Bad Request を返す ) <<error>>
+    ( <レポートID>と<改善状態>を\npostする ) ..> ( 400 Bad Request を返す ) : 改善状態が\n:keepか:try以外\nの場合
+    ( <レポートID>に紐付く\nレポートを探す ) ..> ( 400 Bad Request を返す ) : 改善状態が\n遷移順に\n違反する場合
+    note on link
+      problem -> :try <--> :keep
+    end note
+
+@enduml
