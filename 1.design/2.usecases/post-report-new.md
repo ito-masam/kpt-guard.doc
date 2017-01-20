@@ -4,6 +4,8 @@
     title レポートを登録する
 
     skinparam usecase {
+      FontColor<<error>> white
+      FontName<<error>> Verdana
       BackgroundColor<<error>> gray
       BorderColor<<error>> black
     }
