@@ -1,30 +1,31 @@
 @startuml
 
-left to right direction
+    left to right direction
 
-class User {
-	- enrolled_channel_id
-}
-class Report {
-	- id
-	- who
-	- content
-	- status
-	- created_at
-	- deleted
-}
-class EnrolledChannels {
-	- id
-}
+    mix_actor User
 
-User "1"--o "1..*" Report
-note on link
-	@reply post new
-	@reply post status
-	@reply list
-	@reply delete
-end note
-Report "1..*" --- "1" EnrolledChannels
-note on link: isAvailable()
+    class Report {
+      - id
+      - content
+      - status
+      + post()
+      + delete()
+      + post-status()
+    }
+
+    class Channel {
+      - id
+      + isMember(user_id)
+    }
+
+    User --o Channel
+    note on link
+      UserはChannelに属している
+    end note
+
+    Report "1..*" --o "1" Channel
+    note on link
+      ReportはChannelに属している
+    end note
 
 @enduml
