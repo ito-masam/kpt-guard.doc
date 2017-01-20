@@ -1,13 +1,30 @@
-## レポートを修正する
+@startuml
 
-1. slackのbotとして動作する
-1. botは@replyでコマンドとレポートIDとレポートを受け付ける
-1. 受け付けるコマンドは`post #<レポートID> <レポート>`
-1. botは受け付けたレポートIDに紐つくレポートを、誰から・どんな内容での２つに分解する
-	- 代替コース：受け付けたレポートIDに紐つくレポートが存在しない場合は、`404 Not Found`を返して終わる。
-1. 履歴は保存しない
-1. 改善状態を変更しない
+    ' ----------- meta
+    title レポートを修正する
 
-```
-@incident #0104503 Bプロジェクトでパスワードの長さが英数４桁だった。少なくとも英数記号以上にしなければ暗号強度が低すぎて辞書攻撃で破られてしまう。
-```
+    skinparam usecase {
+      FontColor<<error>> white
+      FontName<<error>> Verdana
+      BackgroundColor<<error>> gray
+      BorderColor<<error>> black
+    }
+
+    actor User
+
+    ' ----------- main
+    User -- ( <レポートID>と<レポート>を\npostする )
+    ( <レポートID>と<レポート>を\npostする ) ..> ( userとcontentに\n分解する ) : << precedes >>
+    ( <レポートID>と<レポート>を\npostする ) ..> ( <レポートID>に紐付く\nレポートを探す ) : << precedes >>
+    ( <レポートID>に紐付く\nレポートを探す ) ..> ( 該当レポートを更新する ) : << precedes >>
+    ( userとcontentに\n分解する ) ..> ( 該当レポートを更新する ) : << precedes >>
+
+    note right of ( <レポートID>と<レポート>を\npostする )
+      @reply #0104503 Bプロジェクトでパスワードの長さが英数４桁だった。
+    end note
+
+    ' ----------- alternative
+    ( 404 Not Found を返す ) <<error>>
+    ( <レポートID>と<レポート>を\npostする ) ..> ( 404 Not Found を返す ) : <レポートID>に紐付く\nレポートが存在しない
+
+@enduml
