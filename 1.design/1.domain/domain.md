@@ -11,6 +11,7 @@
       + post()
       + delete()
       + post-status()
+      + list()
     }
 
     class Channel {
