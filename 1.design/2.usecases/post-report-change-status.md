@@ -30,7 +30,7 @@
     ( <レポートID>と<改善状態>を\npostする ) ..> ( 400 Bad Request を返す ) : 改善状態が\n:keepか:try以外\nの場合
     ( <レポートID>に紐付く\nレポートを探す ) ..> ( 400 Bad Request を返す ) : 改善状態が\n遷移順に\n違反する場合
     note on link
-      problem -> :try <--> :keep
+      :problem -> :try <--> :keep
     end note
 
 @enduml
