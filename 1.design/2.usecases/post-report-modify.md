@@ -16,8 +16,8 @@
     User -- ( <レポートID>と<レポート>を\npostする )
     ( <レポートID>と<レポート>を\npostする ) ..> ( userとcontentに\n分解する ) : << precedes >>
     ( <レポートID>と<レポート>を\npostする ) ..> ( <レポートID>に紐付く\nレポートを探す ) : << precedes >>
-    ( <レポートID>に紐付く\nレポートを探す ) ..> ( 該当レポートを更新する ) : << precedes >>
-    ( userとcontentに\n分解する ) ..> ( 該当レポートを更新する ) : << precedes >>
+    ( <レポートID>に紐付く\nレポートを探す ) ..> ( 該当レポートの\nuserとcontent\nを更新する ) : << precedes >>
+    ( userとcontentに\n分解する ) ..> ( 該当レポートの\nuserとcontent\nを更新する ) : << precedes >>
 
     note right of ( <レポートID>と<レポート>を\npostする )
       @reply #0104503 Bプロジェクトでパスワードの長さが英数４桁だった。
