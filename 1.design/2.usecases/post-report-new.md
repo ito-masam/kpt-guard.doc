@@ -24,6 +24,6 @@
 
     ' ----------- alternative
     ( 403 Forbidden を返す ) <<error>>
-    ( <レポート>をpostする ) ..> ( 403 Forbidden を返す ) : Userとbotが同じchannelに属していない
+    ( <レポート>をpostする ) ..> ( 403 Forbidden を返す ) : Userとbotが\n同じchannelに\n属していない
 
 @enduml

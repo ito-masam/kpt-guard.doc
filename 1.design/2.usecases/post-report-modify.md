@@ -24,7 +24,10 @@
     end note
 
     ' ----------- alternative
+    ( 403 Forbidden を返す ) <<error>>
+    ( <レポートID>と<レポート>を\npostする ) ..> ( 403 Forbidden を返す ) : Userとbotが\n同じchannelに\n属していない
+
     ( 404 Not Found を返す ) <<error>>
-    ( <レポートID>と<レポート>を\npostする ) ..> ( 404 Not Found を返す ) : <レポートID>に紐付く\nレポートが存在しない
+    ( <レポートID>に紐付く\nレポートを探す ) ..> ( 404 Not Found を返す ) : <レポートID>に紐付く\nレポートが存在しない
 
 @enduml
