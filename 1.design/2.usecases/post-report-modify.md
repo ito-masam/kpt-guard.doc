@@ -24,6 +24,9 @@
     end note
 
     ' ----------- alternative
+    ( 400 Bad Request を返す ) <<error>>
+    ( <レポートID>と<レポート>を\npostする ) ..> ( 400 Bad Request を返す ) : post_modifyの構文\nに適合しない
+
     ( 403 Forbidden を返す ) <<error>>
     ( <レポートID>と<レポート>を\npostする ) ..> ( 403 Forbidden を返す ) : Userとbotが\n同じchannelに\n属していない
 

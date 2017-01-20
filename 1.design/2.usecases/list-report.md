@@ -22,6 +22,9 @@
     end note
 
     ' ----------- alternative
+    ( 400 Bad Request を返す ) <<error>>
+    ( listする ) ..> ( 400 Bad Request を返す ) : listの構文\nに適合しない
+
     ( 403 Forbidden を返す ) <<error>>
     ( listする ) ..> ( 403 Forbidden を返す ) : Userとbotが\n同じchannelに\n属していない
 
