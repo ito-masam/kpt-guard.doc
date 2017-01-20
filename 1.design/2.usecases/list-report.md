@@ -4,6 +4,8 @@
     title レポートリストを出力する
 
     skinparam usecase {
+      FontColor<<error>> white
+      FontName<<error>> Verdana
       BackgroundColor<<error>> gray
       BorderColor<<error>> black
     }
