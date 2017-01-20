@@ -32,7 +32,7 @@
 
 
     ' ----------- main
-    User --> bot
+    User -right-> bot
     bot -right--> deassembly : <レポートID>と<レポート>を\npostする
     bot -left--> find
     deassembly --> save
@@ -41,6 +41,13 @@
     save --> bot : 200 OKを返す
 
     ' ----------- alternative
+    control error400 <<error>>
+    note top of error400
+        400 Bad Request を返す
+    end note
+    deassembly -up-> error400 : post_modifyの構文\nに適合しない
+    error400 --> bot
+
     control error403 <<error>>
     note top of error403
         403 Forbiddenを返す

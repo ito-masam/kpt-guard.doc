@@ -19,16 +19,26 @@
 
 
     ' ----------- main
-    User --> bot
-    bot --> deassembly : <レポート>をpostする
+    User -right-> bot
+    bot -right-> deassembly : <レポート>をpostする
     deassembly --> status_problem : OK
     status_problem --> save
     save --- report
     save --- bot : 200 OKを返す
 
     ' ----------- alternative
+    control error400 <<error>>
+    note top of error400
+        400 Bad Request を返す
+    end note
+    deassembly -up-> error400 : post_newの構文\nに適合しない
+    error400 --> bot
+
     control error403 <<error>>
-    deassembly -->  error403 : Userとbotが同じchannelに属していない
-    error403 --> bot : 403 Forbiddenを返す
+    note top of error403
+        403 Forbiddenを返す
+    end note
+    deassembly -up->  error403 : Userとbotが同じ\nchannelに属していない
+    error403 --> bot
 
 @enduml

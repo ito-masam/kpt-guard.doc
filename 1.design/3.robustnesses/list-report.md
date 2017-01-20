@@ -1,7 +1,7 @@
 @startuml
 
     ' ----------- meta
-    title レポートを削除する
+    title レポートリストを出力する
 
     skinparam {
       ControlFontColor<<error>> white
@@ -12,46 +12,49 @@
 
     actor User
     boundary bot
-    control find
-    note bottom of find
-        <レポートID>に紐付く
-        レポートを探す
+    control list
+    note bottom of list
+        レポート一覧を返す
     end note
-    control delete
-    note right of delete
-        該当レポート
-        を論理削除する
+    control collect
+    note right of collect
+        有効な
+        レポートを集める
     end note
     entity report
 
 
     ' ----------- main
     User -right-> bot
-    bot -right--> find : <レポートID>をdeleteする
-    find --> delete
-    delete --- report
-    delete --> bot : 200 OKを返す
+    bot -right--> list : listする
+    list --> collect
+    collect --- report
+    collect --> bot : レポート一覧を返す
+    note on link
+        全ての改善状態の
+        レポートを出力する
+    end note
 
     ' ----------- alternative
     control error400 <<error>>
     note top of error400
         400 Bad Request を返す
     end note
-    find -up-> error400 : deleteの構文\nに適合しない
+    list -up-> error400 : listの構文\nに適合しない
     error400 --> bot
 
     control error403 <<error>>
     note top of error403
         403 Forbiddenを返す
     end note
-    find -up->  error403 : Userとbotが同じ\nchannelに属していない
+    list -up->  error403 : Userとbotが同じ\nchannelに属していない
     error403 --> bot
 
     control error404 <<error>>
     note top of error404
         404 Not Foundを返す
     end note
-    find -up-> error404 : <レポートID>に紐付く\nレポートが存在しない
+    list -up-> error404 : 有効なレポートが存在しない
     error404 --> bot
 
 @enduml
