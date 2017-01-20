@@ -1,12 +1,15 @@
-## レポートを登録する
+@startuml
 
-1. slackのbotとして動作する
-1. botは@replyでコマンドとレポートを受け付ける
-1. 受け付けるコマンドは`post <レポート>`
-1. botは受け付けたレポートを、誰(who)から・どんな内容(content)での２つに分解する
-1. 改善状態をproblem固定とする
-1. 保存する先はDB
+  title レポートを登録する
 
-```
-@incident post Aプロジェクトでパスワードの長さが英数４桁だった。少なくとも英数記号以上にしなければ暗号強度が低すぎて辞書攻撃で破られてしまう。
-```
+  actor User
+  User --- ( <レポート>をpostする )
+  ( <レポート>をpostする ) ..> ( userとcontentに\n分解する ) : << precedes >>
+  ( userとcontentに\n分解する ) ..> ( 改善状態を\nproblem固定とする ) : << precedes >>
+  ( 改善状態を\nproblem固定とする ) ..> ( 保存する ) : << precedes >>
+
+  note right of ( <レポート>をpostする )
+    @reply post Aプロジェクトでパスワードの長さが英数４桁だった。
+  end note
+
+@enduml
