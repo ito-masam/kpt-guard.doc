@@ -21,7 +21,7 @@
           post_new_action -> post_new_validator : validate_syntax(message)
           activate post_new_validator
             alt success
-              post_new_validator --> post_new_action : Validate
+              post_new_validator --> post_new_action : Validated
               post_new_action -> post_new_action : parse_message(message)
               post_new_action -> post_new_action : create_report(user, content, status=:problem)
               post_new_action -> report : save(report)
