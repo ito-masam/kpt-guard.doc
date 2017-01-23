@@ -25,7 +25,7 @@
 
 @enduml
 
-
+/'
 保存先はpostgresqlで、channel-category-messageのリレーションを作成する。
 active-jobの実装であるsuccer-punchを使って遅延ジョブ実行を行えば良い。herokuではredisは使わなくても遅延ジョブは実行できるとのこと。
 
@@ -59,3 +59,4 @@ postgresqlの代わりにredisの利用を考えた場合、書き込み・参�
   - HA構成(premium)の場合、`support@redistogo.com`にredis sentinelについて問い合わせれば詳細が得られる。
 - railsとは[redis-objects](https://github.com/nateware/redis-objects)で間接的に操作可能。
 - データの永続性については、メモリ容量に直接依存するが、既存データを削除して新規データを書き込む流れになる
+'/'
