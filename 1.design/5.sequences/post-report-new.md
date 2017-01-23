@@ -25,6 +25,7 @@
               post_new_action -> post_new_action : parse_message(message)
               post_new_action -> post_new_action : create_report(user, content, status=:problem)
               post_new_action -> report : save(report)
+              post_new_action --> bot : 200 OK
             else failure
               ' ----------- alternative
               post_new_validator --> post_new_action : Invalidate
