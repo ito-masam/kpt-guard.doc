@@ -13,6 +13,8 @@
     }
     database report
     note bottom of report
+      postgresqlを利用
+      　
       レコードに対して
       多重更新は行われない
     end note
