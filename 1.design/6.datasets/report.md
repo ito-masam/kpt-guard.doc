@@ -7,11 +7,11 @@
       - wrote_user
       - created_at
       - deleted_at
-      + save()
-      + find()
+      + save(*)
+      + find(id)
       + list()
-      + update()
-      + delete()
+      + update(*)
+      + delete(id)
     }
 
 @enduml
