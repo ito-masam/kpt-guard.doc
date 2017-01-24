@@ -26,7 +26,4 @@
     ( 400 Bad Request を返す ) <<error>>
     ( <レポート>をpostする ) ..> ( 400 Bad Request を返す ) : post_newの構文\nに適合しない
 
-    ( 403 Forbidden を返す ) <<error>>
-    ( <レポート>をpostする ) ..> ( 403 Forbidden を返す ) : Userとbotが\n同じchannelに\n属していない
-
 @enduml

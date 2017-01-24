@@ -26,9 +26,6 @@
     ( 400 Bad Request を返す ) <<error>>
     ( <レポートID>と<改善状態>を\npostする ) ..> ( 400 Bad Request を返す ) : post_statusの構文\nに適合しない
 
-    ( 403 Forbidden を返す ) <<error>>
-    ( <レポートID>と<改善状態>を\npostする ) ..> ( 403 Forbidden を返す ) : Userとbotが\n同じchannelに\n属していない
-
     ( 404 Not Found を返す ) <<error>>
     ( <レポートID>に紐付く\nレポートを探す ) ..> ( 404 Not Found を返す ) : <レポートID>に紐付く\nレポートが存在しない
 

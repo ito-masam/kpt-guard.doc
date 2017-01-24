@@ -25,9 +25,6 @@
     ( 400 Bad Request を返す ) <<error>>
     ( listする ) ..> ( 400 Bad Request を返す ) : listの構文\nに適合しない
 
-    ( 403 Forbidden を返す ) <<error>>
-    ( listする ) ..> ( 403 Forbidden を返す ) : Userとbotが\n同じchannelに\n属していない
-
     ( 404 Not Found を返す ) <<error>>
     ( 有効な\nレポートを集める ) ..> ( 404 Not Found を返す ) : 有効なレポートが存在しない
 

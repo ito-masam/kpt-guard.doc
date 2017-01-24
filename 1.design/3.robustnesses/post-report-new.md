@@ -34,11 +34,4 @@
     deassembly -up-> error400 : post_newの構文\nに適合しない
     error400 --> bot
 
-    control error403 <<error>>
-    note top of error403
-        403 Forbiddenを返す
-    end note
-    deassembly -up->  error403 : Userとbotが同じ\nchannelに属していない
-    error403 --> bot
-
 @enduml

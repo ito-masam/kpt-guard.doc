@@ -40,13 +40,6 @@
     find -up-> error400 : deleteの構文\nに適合しない
     error400 --> bot
 
-    control error403 <<error>>
-    note top of error403
-        403 Forbiddenを返す
-    end note
-    find -up->  error403 : Userとbotが同じ\nchannelに属していない
-    error403 --> bot
-
     control error404 <<error>>
     note top of error404
         404 Not Foundを返す
