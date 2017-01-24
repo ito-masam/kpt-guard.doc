@@ -17,7 +17,7 @@
       post_new_action -> authenticator : authenticate(user, channel)
       activate authenticator
         alt success
-          authenticator --> post_new_action : Authenticate Accepted
+          authenticator --> post_new_action : Authentication Accepted
           post_new_action -> post_new_validator : validate_syntax(message)
           activate post_new_validator
             alt success
@@ -34,7 +34,7 @@
           deactivate post_new_validator
         else failure
           ' ----------- alternative
-          authenticator --> post_new_action : Authenticate Failure
+          authenticator --> post_new_action : Authentication Failure
           post_new_action --> bot : 403 Forbidden
         end
       deactivate authenticator
