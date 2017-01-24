@@ -24,11 +24,11 @@
             alt success
               list_validator --> list_action : Valid
               list_action -> list_action : parse_message(message)
-              list_action -> report : find_all
+              list_action -> report : list()
               activate report
                 alt success
                   report --> list_action : Found
-                  list_action -> list_action : list_report_by_categories()
+                  list_action -> list_action : list_report_group_by_statuses()
                   list_action -> slack_adapter : list(list, 200 OK)
                 else failure
                   report --> list_action : Not Found
