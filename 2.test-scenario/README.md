@@ -1,3 +1,7 @@
 # test scenario
 
-1. [レポートを登録する](post-report.md)
+1. [レポートを新規登録する](post-report-new.md)
+1. [レポートを修正する](post-report-modify.md)
+1. [レポートを削除する](delete-report.md)
+1. [レポートを一覧する](list-report.md)
+1. [レポートの改善状態を変更する](post-report-change-status.md)
