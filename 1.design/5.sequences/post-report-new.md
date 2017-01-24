@@ -11,7 +11,7 @@
     entity report
 
     ' ----------- main
-    User -> bot : @reply post <message>
+    User -> bot : @reply post <string>
     bot -> post_new_action : set_message(message)
     activate post_new_action
       post_new_action -> authenticator : authenticate(user, channel)

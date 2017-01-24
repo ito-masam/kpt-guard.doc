@@ -11,7 +11,7 @@
     entity report
 
     ' ----------- main
-    User -> bot : @reply post #id <message>
+    User -> bot : @reply post #id <string>
     bot -> post_modify_action : set_message(message)
     activate post_modify_action
       post_modify_action -> authenticator : authenticate(user, channel)
@@ -25,16 +25,16 @@
               post_modify_action -> post_modify_action : parse_message(message)
               post_modify_action -> report : find(#id)
               activate report
-                alt found
+                alt success
                   report --> post_modify_action
-                else not found
+                  post_modify_action -> post_modify_action : create_report(#id, user, content)
+                  post_modify_action -> report : update(report)
+                  post_modify_action --> bot : 200 OK
+                else failure
                   report --> post_modify_action
                   post_modify_action --> bot : 404 Not Found
                 end
               deactivate report
-              post_modify_action -> post_modify_action : create_report(#id, user, content)
-              post_modify_action -> report : update(report)
-              post_modify_action --> bot : 200 OK
             else failure
               ' ----------- alternative
               post_modify_validator --> post_modify_action : Invalidate
