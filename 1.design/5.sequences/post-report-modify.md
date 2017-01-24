@@ -5,6 +5,7 @@
 
     actor User
     boundary bot
+    participant slack_adapter
     participant post_modify_action
     participant authenticator
     participant post_modify_validator
@@ -29,24 +30,26 @@
                   report --> post_modify_action
                   post_modify_action -> post_modify_action : create_report(#id, user, content)
                   post_modify_action -> report : update(report)
-                  post_modify_action --> bot : 200 OK
+                  post_modify_action -> slack_adapter : ok(200 OK)
                 else failure
                   report --> post_modify_action
-                  post_modify_action --> bot : 404 Not Found
+                  post_modify_action -> slack_adapter : error(404 Not Found)
                 end
               deactivate report
             else failure
               ' ----------- alternative
               post_modify_validator --> post_modify_action : Invalidate
-              post_modify_action --> bot : 400 Bad Request
+              post_modify_action -> slack_adapter : error(400 Bad Request)
             end
           deactivate post_modify_validator
         else failure
           ' ----------- alternative
           authenticator --> post_modify_action : Authentication Failure
-          post_modify_action --> bot : 403 Forbidden
+          post_modify_action -> slack_adapter : error(403 Forbidden)
         end
       deactivate authenticator
     deactivate post_modify_action
+    slack_adapter -> bot : post message
+    bot --> User
 
 @enduml

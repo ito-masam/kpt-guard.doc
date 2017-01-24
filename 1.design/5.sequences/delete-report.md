@@ -5,6 +5,7 @@
 
     actor User
     boundary bot
+    participant slack_adapter
     participant delete_action
     participant authenticator
     participant delete_validator
@@ -29,24 +30,26 @@
                   report --> delete_action : Found
                   delete_action -> delete_action : create_report(#id)
                   delete_action -> report : delete(report)
-                  delete_action --> bot : 200 OK
+                  delete_action -> slack_adapter : ok(200 OK)
                 else failure
                   report --> delete_action : Not Found
-                  delete_action --> bot : 404 Not Found
+                  delete_action -> slack_adapter : error(404 Not Found)
                 end
               deactivate report
             else failure
               ' ----------- alternative
               delete_validator --> delete_action : Invalid
-              delete_action --> bot : 400 Bad Request
+              delete_action -> slack_adapter : error(400 Bad Request)
             end
           deactivate delete_validator
         else failure
           ' ----------- alternative
           authenticator --> delete_action : Authentication Failure
-          delete_action --> bot : 403 Forbidden
+          delete_action -> slack_adapter : error(403 Forbidden)
         end
       deactivate authenticator
     deactivate delete_action
+    slack_adapter -> bot : post message
+    bot --> User
 
 @enduml

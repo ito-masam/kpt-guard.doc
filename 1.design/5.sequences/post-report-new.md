@@ -5,6 +5,7 @@
 
     actor User
     boundary bot
+    participant slack_adapter
     participant post_new_action
     participant authenticator
     participant post_new_validator
@@ -25,19 +26,21 @@
               post_new_action -> post_new_action : parse_message(message)
               post_new_action -> post_new_action : create_report(user, content, status=:problem)
               post_new_action -> report : save(report)
-              post_new_action --> bot : 200 OK
+              post_new_action -> slack_adapter : ok(200 OK)
             else failure
               ' ----------- alternative
               post_new_validator --> post_new_action : Invalidate
-              post_new_action --> bot : 400 Bad Request
+              post_new_action -> slack_adapter : error(400 Bad Request)
             end
           deactivate post_new_validator
         else failure
           ' ----------- alternative
           authenticator --> post_new_action : Authentication Failure
-          post_new_action --> bot : 403 Forbidden
+          post_new_action -> slack_adapter : error(403 Forbidden)
         end
       deactivate authenticator
     deactivate post_new_action
+    slack_adapter -> bot : post message
+    bot --> User
 
 @enduml
