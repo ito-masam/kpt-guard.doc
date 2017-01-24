@@ -7,10 +7,10 @@
       - wrote_user
       - created_at
       - deleted_at
-      + save(*)
+      + save(self)
       + find(id)
       + list()
-      + update(*)
+      + update(self)
       + delete(id)
     }
 
