@@ -18,7 +18,7 @@
         activate post_status_validator
             alt success
                 post_status_validator --> post_status_action : Valid
-                post_status_action -> post_status_action : parse_message(message)
+                post_status_action -> post_status_action : parse_message(message) : #uuid, :status
                 post_status_action -> report : find(#uuid)
                 activate report
                     alt success

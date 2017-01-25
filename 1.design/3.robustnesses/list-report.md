@@ -13,7 +13,8 @@
     actor User
     boundary bot
     control list
-    note bottom of list
+    note right of list
+        チャンネルを指定した
         レポート一覧を返す
     end note
     control collect

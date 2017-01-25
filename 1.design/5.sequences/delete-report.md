@@ -18,7 +18,7 @@
         activate delete_validator
             alt success
                 delete_validator --> delete_action : Valid
-                delete_action -> delete_action : parse_message(message)
+                delete_action -> delete_action : parse_message(message) : #uuid
                 delete_action -> report : find(#uuid)
                 activate report
                     alt success

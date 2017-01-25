@@ -12,9 +12,22 @@
 
     actor User
     boundary bot
-    control deassembly as "userとcontentに\n分解する"
-    control status_problem as "改善状態を\nproblemに設定する"
-    control save as "userとcontentと\nstatusを保存する"
+    control deassembly
+    note top of deassembly
+        user, content,
+        channel_idに分解する
+    end note
+    control status_problem
+    note bottom of status_problem
+        改善状態を
+        problemに設定する
+    end note
+    control save
+    note left of save
+        user, content,
+        status, channel_id,
+        を保存する
+    end note
     entity report
 
 

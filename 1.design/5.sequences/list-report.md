@@ -18,12 +18,12 @@
         activate list_validator
             alt success
                 list_validator --> list_action : Valid
-                list_action -> list_action : parse_message(message)
+                list_action -> list_action : parse_message(message) : channel_id
                 list_action -> report : list()
                 activate report
                     alt success
                         report --> list_action : Found
-                        list_action -> list_action : list_report_group_by_statuses()
+                        list_action -> list_action : group_by_statuses(channel_id)
                         list_action -> slack_adapter : list(list, 200 OK)
                     else failure
                         report --> list_action : Not Found

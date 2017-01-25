@@ -14,8 +14,8 @@
 
     ' ----------- main
     User --- ( listする )
-    ( listする ) ..> ( レポート一覧を返す ) : << precedes >>
-    ( レポート一覧を返す ) ..> ( 有効な\nレポートを集める ) : << invokes >>
+    ( listする ) ..> ( チャンネルを指定した\nレポート一覧を返す ) : << precedes >>
+    ( チャンネルを指定した\nレポート一覧を返す ) ..> ( 有効な\nレポートを集める ) : << invokes >>
 
     note right of ( listする )
       @reply list

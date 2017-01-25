@@ -14,8 +14,8 @@
     boundary bot
     control deassembly
     note bottom of deassembly
-        userとcontentに
-        分解する
+        user, content,
+        channel_idに分解する
     end note
     control find
     note bottom of find

@@ -1,6 +1,6 @@
 # レポートを削除する
 
-@incident-botは、#bot-sandboxに属していること
+- @incident-botは、#bot-sandboxに属していること
 
 ## 基本コース
 
