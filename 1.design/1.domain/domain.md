@@ -5,28 +5,24 @@
     mix_actor User
 
     class Report {
-      - id
+      - uuid
       - content
       - status
-      + post()
-      + delete()
-      + post-status()
-      + list()
+      - wrote_user_name
+      - channel_id
     }
 
     class Channel {
       - id
-      + isMember(user_id)
+    }
+    note bottom of Channel {
+      ChannelにUser/Reportが
+      属することは
+      Slackが保証する
     }
 
     User --o Channel
-    note on link
-      UserはChannelに属している
-    end note
 
     Report "1..*" --o "1" Channel
-    note on link
-      ReportはChannelに属している
-    end note
 
 @enduml

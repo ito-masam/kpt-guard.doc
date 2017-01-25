@@ -17,9 +17,9 @@
     ( <レポートID>と<改善状態>を\npostする ) ..> ( <レポートID>に紐付く\nレポートを探す ) : << precedes >>
     ( <レポートID>に紐付く\nレポートを探す ) ..> ( 該当レポートの\nstatusを\n更新する ) : << precedes >>
 
-    note right of ( <レポートID>と<改善状態>を\npostする )
-      @reply post #0104503 :try
-      @reply post #0104503 :keep
+    note left of ( <レポートID>と<改善状態>を\npostする )
+      @reply post #f8681be4-45f3-463f-aee4-00e3599da497 :try
+      @reply post #f8681be4-45f3-463f-aee4-00e3599da497 :keep
     end note
 
     ' ----------- alternative

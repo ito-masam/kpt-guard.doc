@@ -11,7 +11,7 @@
     entity report
 
     ' ----------- main
-    User -> bot : @reply delete #id
+    User -> bot : @reply delete #uuid
     bot -> delete_action : set_message(message)
     activate delete_action
         delete_action -> delete_validator : validate_syntax(message)
@@ -19,11 +19,11 @@
             alt success
                 delete_validator --> delete_action : Valid
                 delete_action -> delete_action : parse_message(message)
-                delete_action -> report : find(#id)
+                delete_action -> report : find(#uuid)
                 activate report
                     alt success
                         report --> delete_action : Found
-                        delete_action -> delete_action : create_report(#id)
+                        delete_action -> delete_action : create_report(#uuid)
                         delete_action -> report : delete(report)
                         delete_action -> slack_adapter : ok(200 OK)
                     else failure

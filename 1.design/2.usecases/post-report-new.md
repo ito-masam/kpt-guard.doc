@@ -19,7 +19,7 @@
     ( 改善状態を\nproblem固定とする ) ..> ( 保存する ) : << precedes >>
 
     note right of ( <レポート>をpostする )
-      @reply post Aプロジェクトでパスワードの長さが英数４桁だった。
+      @reply post 暗号強度が弱すぎる。
     end note
 
     ' ----------- alternative

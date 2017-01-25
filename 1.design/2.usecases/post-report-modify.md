@@ -20,7 +20,7 @@
     ( userとcontentに\n分解する ) ..> ( 該当レポートの\nuserとcontent\nを更新する ) : << precedes >>
 
     note right of ( <レポートID>と<レポート>を\npostする )
-      @reply #0104503 Bプロジェクトでパスワードの長さが英数４桁だった。
+      @reply post #f8681be4-45f3-463f-aee4-00e3599da497 暗号強度が強すぎる。
     end note
 
     ' ----------- alternative

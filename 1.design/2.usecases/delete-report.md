@@ -18,7 +18,7 @@
     ( <レポートID>に紐付く\nレポートを探す ) ..> ( 該当レポートを\n論理削除する ) : << precedes >>
 
     note right of ( <レポートID>をdeleteする )
-      @reply delete #0104503
+      @reply delete #f8681be4-45f3-463f-aee4-00e3599da497
     end note
 
     ' ----------- alternative

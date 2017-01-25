@@ -1,17 +1,18 @@
 @startuml
 
     class Report {
-      - id
-      - string
+      - uuid
+      - content
       - status
-      - wrote_user
+      - wrote_user_name
+      - channel_id
       - created_at
       - deleted_at
       + save(self)
-      + find(id)
-      + list()
+      + find(uuid)
+      + list(channel_id)
       + update(self)
-      + delete(id)
+      + delete(uuid)
     }
 
 @enduml
