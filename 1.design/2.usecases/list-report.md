@@ -1,7 +1,7 @@
 @startuml
 
     ' ----------- meta
-    title レポートリストを出力する
+    title レポートを一覧する
 
     skinparam usecase {
       FontColor<<error>> white
