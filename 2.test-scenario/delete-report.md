@@ -26,7 +26,7 @@
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - deleted_at=`NOT NULL`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 400 Bad Request`
+    - `400 Bad Request`
 
 ## 代替コース 404 Not Found
 
@@ -36,4 +36,4 @@
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
     - 送るメッセージは`delete 7e967ab0-5153-4e83-b93e-bd5cd290e0a5`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 404 Not Found`
+    - `404 Not Found`
