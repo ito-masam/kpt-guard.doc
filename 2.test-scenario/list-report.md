@@ -23,7 +23,8 @@
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
     - 送るメッセージは`list`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - ```
+    - 
+    ```
     keep
         - 暗号強度がちょうどいい d780bf2e-da5a-409f-bbb8-d99181466318 @user_name
     problem
@@ -53,7 +54,7 @@
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
     - 送るメッセージは`list #da2fd65e-0708-48a7-ac1e-ded06d289dfc`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 400 Bad Request`
+    - `400 Bad Request`
 
 ## 代替コース 404 Not Found
 
@@ -61,4 +62,4 @@
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
     - 送るメッセージは`list`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 404 Not Found`
+    - `404 Not Found`
