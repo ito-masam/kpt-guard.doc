@@ -66,7 +66,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - content=`暗号強度が小さすぎる`
     - status=`keep`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 400 Bad Request`
+    - `400 Bad Request`
 
 ## 代替コース 400 Bad Request : problem to keep
 
@@ -96,7 +96,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - content=`暗号強度が小さすぎる`
     - status=`problem`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 400 Bad Request`
+    - `400 Bad Request`
 
 ## 代替コース 400 Bad Request : try to problem
 
@@ -111,7 +111,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - content=`暗号強度が小さすぎる`
     - status=`problem`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 400 Bad Request`
+    - `400 Bad Request`
 
 ## 代替コース 404 Not Found
 
@@ -125,4 +125,4 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - status=`try`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
-    - `incident-bot \ 404 Not Found`
+    - `404 Not Found`
