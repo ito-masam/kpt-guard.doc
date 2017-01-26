@@ -19,4 +19,4 @@
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
     - 送るメッセージは`post`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記になること
-    - `incident-bot \ 400 Bad Request`
+    - `400 Bad Request`
