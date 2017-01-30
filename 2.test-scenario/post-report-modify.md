@@ -10,7 +10,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が小さすぎる`
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
-    - 送るメッセージは`post #f8681be4-45f3-463f-aee4-00e3599da497 暗号強度が大きすぎる`
+    - 送るメッセージは`post #f8681be445f3463faee400e3599da497 暗号強度が大きすぎる`
 1. DBのReportテーブルが下記であること
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が大きすぎる`
@@ -23,7 +23,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が小さすぎる`
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
-    - 送るメッセージは`post f8681be4-45f3-463f-aee4-00e3599da497 暗号強度が大きすぎる`
+    - 送るメッセージは`post f8681be445f3463faee400e3599da497 暗号強度が大きすぎる`
 1. DBのReportテーブルが*下記でないこと*
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が大きすぎる`
@@ -36,7 +36,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が小さすぎる`
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
-    - 送るメッセージは`post #f8681be4-45f3-463f-aee4-00e3599da497 暗号強度が大きすぎる third_hoge_fuga`
+    - 送るメッセージは`post #f8681be445f3463faee400e3599da497 暗号強度が大きすぎる third_hoge_fuga`
 1. DBのReportテーブルが*下記でないこと*
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が大きすぎる`
@@ -49,7 +49,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が小さすぎる`
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
-    - 送るメッセージは`post #f8681be4-45f3-463f 暗号強度が大きすぎる`
+    - 送るメッセージは`post #f8681be445f3463f 暗号強度が大きすぎる`
 1. DBのReportテーブルが*下記でないこと*
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が大きすぎる`
@@ -62,7 +62,7 @@ reportのidを指定すればwrote_userも書き変わるが本質的な問題�
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が小さすぎる`
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
-    - 送るメッセージは`post #7e967ab0-5153-4e83-b93e-bd5cd290e0a5 暗号強度が大きすぎる`
+    - 送るメッセージは`post #7e967ab051534e83b93ebd5cd290e0a5 暗号強度が大きすぎる`
 1. DBのReportテーブルが*下記でないこと*
     - id=`f8681be4-45f3-463f-aee4-00e3599da497`
     - content=`暗号強度が大きすぎる`
