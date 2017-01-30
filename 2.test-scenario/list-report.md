@@ -12,7 +12,7 @@
         - status=`problem`
     2. try
         - id=`e8c5f921-b941-4b55-83e6-be0b086ad3bb`
-        - content=`暗号強度が大きくする`
+        - content=`暗号強度を大きくする`
         - channel_id=`#bot-sandbox`
         - status=`try`
     3. keep
