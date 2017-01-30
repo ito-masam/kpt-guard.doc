@@ -26,11 +26,11 @@
     - 
     ```
     keep
-        - 暗号強度がちょうどいい d780bf2e-da5a-409f-bbb8-d99181466318 @user_name
+        - 暗号強度がちょうどいい d780bf2eda5a409fbbb8d99181466318 @user_name
     problem
-        - 暗号強度が小さすぎる da2fd65e-0708-48a7-ac1e-ded06d289dfc @user_name
+        - 暗号強度が小さすぎる da2fd65e070848a7ac1eded06d289dfc @user_name
     try
-        - 暗号強度が大きすぎる e8c5f921-b941-4b55-83e6-be0b086ad3bb @user_name
+        - 暗号強度が大きすぎる e8c5f921b9414b5583e6be0b086ad3bb @user_name
     ```
 
 ## 代替コース 400 Bad Request
@@ -52,7 +52,7 @@
         - channel_id=`#bot-sandbox`
         - status=`keep`
 1. slack api tokenを使って、#bot-sandboxで@incident-botへメッセージを送る
-    - 送るメッセージは`list #da2fd65e-0708-48a7-ac1e-ded06d289dfc`
+    - 送るメッセージは`list #da2fd65e070848a7ac1eded06d289dfc`
 1. #bot-sandboxの最新コメント（or botのレスポンス）が下記であること
     - `400 Bad Request`
 
