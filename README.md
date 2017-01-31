@@ -13,6 +13,10 @@ Slackを使ったKPTを取りまとめるbot
 1. [設計](1.design)
 1. [テストシナリオ](2.test-scenario)
 
+### deploy
+
+- [heroku dashboard](https://dashboard.heroku.com/apps/kpt-guard-bot)
+
 ## usage
 
 引数は半角スペースで区切ります。
