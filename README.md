@@ -1,6 +1,6 @@
-# incident-guard
+# kpt-guard
 
-Slackを使ったインシデント報告を取りまとめるbot
+Slackを使ったKPTを取りまとめるbot
 
 ## チャートの閲覧方法
 
